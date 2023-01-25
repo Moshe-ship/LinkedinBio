@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LinkedIn Bio Generator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2/dist/umd/popper.min.js" integrity="sha384-9/reUmVbpOKfc7NzysK1Ku+GJpLPXwqhQnD2bC7w0UHlZXT1cRcU6HrKz3jWqFcw" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+  <style>
+    /* Add custom CSS styles here */
+    .container {
+      margin-top: 50px;
+    }
+    .form-control {
+      background-color: #f8f9fa;
+      border-color: #6c757d;
+    }
+    .btn-primary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+    }
+    /* Add custom styles for the output container */
+    .output-container {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+    .output-container h2 {
+        margin-bottom: 20px;
+    }
+    .output-container p {
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">LinkedIn Bio Generator</h1>
+    <form action="{{ url_for('generate_bio') }}" method="post">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" class="form-control" id="title" name="title" required>
+  </div>
+  <div class="form-group">
+    <label for="industry">Industry:</label>
+    <input type="text" class="form-control" id="industry" name="industry" required>
+  </div>
+  <div class="form-group">
+    <label for="years_of_experience">Years of experience:</label>
+    <input type="text" class="form-control" id="years_of_experience" name="years_of_experience" required>
+  </div>
+  <div class="form-group">
+    <label for="location">Location:</label>
+    <input type="text" class="form-control" id="location" name="location" required>
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-primary" value="Generate Bio">
+  </div>
+</form>
+{% if bio %}
+<div class="output-container">
+    <h2 class="text-center">Generated Bio</h2>
+    <p>{{ bio }}</p>
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>
 
