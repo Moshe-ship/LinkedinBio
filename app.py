@@ -1,11 +1,9 @@
-from flask import Flask, request, jsonify
-import openai
+from flask import Flask, request, jsonify, render_template
 import os
-
+import openai
 
 app = Flask(__name__)
 openai.api_key = os.environ.get("OPENAI_API_KEY")
-
 
 @app.route('/')
 def index():
@@ -33,4 +31,4 @@ def generate_bio():
     return jsonify({"bio": message})
 
 if __name__ == '__main__':
-    flask_app.run(debug=True)
+    app.run(debug=True)
