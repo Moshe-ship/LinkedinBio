@@ -27,7 +27,6 @@ def generate_bio():
         stop=None,
         temperature=0.7,
     )
-    return render_template('index.html', bio=message)
 
     message = completions.choices[0].text
     return jsonify({"bio": message})
