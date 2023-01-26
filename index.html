@@ -39,7 +39,7 @@
 <body>
   <div class="container">
     <h1 class="text-center">LinkedIn Bio Generator</h1>
-    <form action="{{ url_for('generate_bio') }}" method="post">
+    <form action="{{ url_for('generate_bio') }}" method="post" enctype="application/json">
   <div class="form-group">
     <label for="name">Name:</label>
     <input type="text" class="form-control" id="name" name="name" required>
