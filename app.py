@@ -11,12 +11,13 @@ def index():
 
 @app.route('/generate_bio', methods=['POST'])
 def generate_bio():
-    name = request.form['name']
-    title = request.form['title']
-    industry = request.form['industry']
-    years_of_experience = request.form['years_of_experience']
-    location = request.form['location']
-
+    data = request.get_json()
+    name = data['name']
+    title = data['title']
+    industry = data['industry']
+    years_of_experience = data['years_of_experience']
+    location = data['location']
+    
     prompt = (f"Write a high quality and Professional LinkedIn bio for me {name}, I work as a {title} in the {industry} industry and have {years_of_experience} years of experience, based in {location}.")
     completions = openai.Completion.create(
         engine="text-davinci-002",
