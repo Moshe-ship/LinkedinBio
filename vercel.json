@@ -17,6 +17,6 @@
     }
  ],
  "env": {
-    "OPENAI_API_KEY": "@openai-api-key"
+    "OPENAI_API_KEY": "@API_URL"
   }
 }
