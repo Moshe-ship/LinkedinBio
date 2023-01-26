@@ -3,7 +3,10 @@
     "builds": [
         {
             "src": "app.py",
-            "use": "@now/python"
+            "use": "@vercel/python",
+            "env": {
+              "OPENAI_API_KEY": "@openai-api-key"
+            }
         }
     ],
     "routes": [
@@ -12,7 +15,4 @@
             "dest": "app.py"
         }
     ]
-  "env": {
-    "OPENAI_API_KEY": "@openai-api-key"
-  }
 }
