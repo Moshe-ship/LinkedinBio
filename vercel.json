@@ -15,8 +15,5 @@
         "src": "/generate_bio",
         "dest": "app.py"
     }
- ],
- "env": {
-    "OPENAI_API_KEY": "@API_URL"
-  }
+ ]
 }
