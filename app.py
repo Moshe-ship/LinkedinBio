@@ -30,5 +30,4 @@ def generate_bio():
     message = completions.choices[0].text
     return jsonify({"bio": message})
 
-if __name__ == '__main__': 
-    app.run()
+
