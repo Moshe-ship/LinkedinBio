@@ -3,20 +3,17 @@
     "builds": [
         {
             "src": "app.py",
-            "use": "@vercel/python",
-            "env": {
-                "OPENAI_API_KEY": "@OPENAI_API_KEY"
-            }
+            "use": "@vercel/python"
         }
     ],
     "routes": [
-        {
-            "src": "/",
-            "dest": "app.py"
-        },
-        {
-            "src": "/generate_bio",
-            "dest": "app.py"
-        }
-    ]
+    {
+        "src": "/",
+        "dest": "app.py"
+    },
+    {
+        "src": "/generate_bio",
+        "dest": "app.py"
+    }
+ ]
 }
