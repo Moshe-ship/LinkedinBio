@@ -11,7 +11,7 @@ def index():
 
 @app.route('/generate_bio', methods=['POST'])
 def generate_bio():
-    data = request.get_json()
+    data = request.form.to_dict()
     name = data['name']
     title = data['title']
     industry = data['industry']
@@ -29,6 +29,3 @@ def generate_bio():
     )
     message = completions.choices[0].text
     return render_template('index.html', bio=message)
-
-
-
